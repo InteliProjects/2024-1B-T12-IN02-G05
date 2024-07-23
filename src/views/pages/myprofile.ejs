@@ -1,0 +1,710 @@
+<!-- CSS Styles -->
+<style>
+     /* General settings for html and body */
+     html, body {
+  height: 100%;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  display: flex;
+  }
+
+  /* Styling for the main section */
+  #main {
+    flex: 1; /* Occupies available space */
+    display: flex;
+    flex-direction: column; /* organizes the div elements into columns */
+    justify-content: flex-start; /* Aligns items to the beginning of the container */
+    align-items: center; 
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins';
+  }
+
+  /* General settings for body */
+  body {
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    width: 100%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;  
+    overflow-x: hidden; /* Hides horizontal overflow */
+    background-color: #FFFAFA;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Hide elements with class 'edit-mode' */
+  .edit-mode {
+    display: none;
+  }
+
+  /*common styling between inputs and textareas */
+  .edit-mode input,
+  .edit-mode textarea {
+    display: none; /* Hide initially */
+    width: 220px;
+    margin: 5px 0;
+    border-radius: 10px;
+    font-family: inherit; /* Inherit font family */
+    font-size: 10px;
+    display: block;
+    background-color: transparent;
+    color: white;
+  }
+
+  /*stylization of textareas */
+   textarea {
+    padding: 0;
+    height: 110px;
+    width: 230px;
+    max-width: 230px; 
+    max-height: 100px;
+  }
+
+  /* Styling for the text within the .column span elements */
+  .column span{
+    width: 230px;
+    font-size: 10px;
+    max-width: 210px; 
+    white-space: pre-wrap; /* Keep whitespace */
+    word-wrap: break-word; /* Break long words */
+  }
+
+  /* Style for buttons */
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Defines the spacing between buttons */
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  /* style applied to all buttons */
+  button {
+    border: none;
+    border-radius: 10.4px;
+    cursor: pointer; /* Define cursor as pointer */
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    gap: 10.36px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+  }
+
+  /* Specific style for the edit button */
+  #edit{
+    background-color: #253C56;
+    margin-right: 100px;
+  }
+
+  /* Style for the cancel button */
+  .cancel-button {
+    background-color: #f44336;
+  }
+
+  /* Style for the save button */
+  .save-button {
+    background-color: #008CBA;
+  }
+
+  /* Hides the profile image editing element */
+  #profile-img-edit {
+    display: none;
+  }
+
+  /* Top margin for save/cancel buttons */
+  #save-cancel-bt{
+    margin-top: 10px;
+  }
+
+  /* Specific style for the image edit button */
+  .edit-img-button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+  }
+
+  /* Style for icons */
+  .icon {
+    display: inline-block; /* Display as inline block */
+    vertical-align: middle; /* Align vertically in half */
+  }
+
+  /* Style for the bottom section */
+  .bottom {
+    display: flex;
+    justify-content: space-between; /* Space the items */
+    gap: 2%;
+    width: 100%;
+    margin-top: 2%;
+  }
+
+  /* Style for the top section */
+  .higher {
+    display: flex;
+    justify-content: left; /* Align items to the left */
+    align-items: center;
+    margin-bottom: 1.2%;
+    width: 100%;
+  }
+
+  /* Style for h1 headings in the top section */
+  .higher h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  /* Style for the title of page */
+  #pagetitle {
+    font-weight: bold;
+    font-size: 36px;
+    text-align: left; /* Align text to the left */
+    margin: 0;
+    color: #253C56;
+  }
+
+  /* Style for the profile section */
+  .profile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space the items */
+    align-items: center;
+  }
+
+  /* Style for the column headings */
+  .principaltitle {
+    font-weight: bold;
+    background-color: #253C56;
+    width: 180px;
+    height: 18px;
+    border-radius: 10.4px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 12.3px;
+    padding: 2%;
+  }
+
+  /* Style for the social media section */
+  #socialmedia {
+    background-color: #F9AB00; 
+    color: black;
+  }
+
+  /* Style for the main container */
+  #master {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    flex-grow: 1;
+  }
+
+  /* Style for sections */
+  .section{
+    background-color: #305073;
+    border-radius: 10.4px;
+    color: white;
+    height: 110px;
+    width: 260px;
+    margin-top: 24px;
+    padding-left: 20px;
+    padding-top: 13px;
+  }
+
+  /* Style for the social media section */
+  .social-media{
+    background-color: #F3C666;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10.4px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 24px;
+    width: 234px;
+    height: 30px;
+  }
+
+  /* Style for inputs and spans in the social media section */
+  .social-media input,
+  .social-media span {
+    width: 180px;
+    background-color: transparent;
+    justify-content: center;
+    font-size: 14.391px;
+    color: black;
+  }
+
+  /* Style for inputs and spans in the informations section */
+  .info input, 
+  .info span {
+    color: black;
+  }
+
+  /* Styling the horizontal line that divides the page */
+  hr{
+    width: 100%;
+    border: 1.8px solid #F9AB00;
+  }
+
+  /* Style for the image edit button */
+  #edit_image{
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Setting the profile image size */
+  #profile-img{
+    width: 110px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* Styling the div with the information at the top of the screen */
+  #profile-view{
+    margin-left: 30px;
+    align-items: center;
+  }
+
+  /* Style for profile information */
+  .profile-info{
+    margin-left: 30px;
+  }
+
+  /* Style for the h1 title in the profile information */
+  .profile-info h1 {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+
+  /* Style for paragraph in profile information */
+  .profile-info p {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  /* Definition of the size and margin of the icons present in the lower section */
+  .icon-img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  /* Setting the size of the edit profile icon */
+  .icon-button{
+    width: 17.5px;
+    height: 22.9px;
+  }
+
+  /* Defining the size and margin of the information icons */
+  .icon-about{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+
+  /* Style for section titles */
+  .section h3{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Style for the inputs in the top section */
+  .higher input{
+    color: black;
+    width: 184px;
+    height: 24px;
+  }
+
+  /* Style for name editing input */
+  #edit-name{
+    width: 180px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 10.4px;
+  }
+
+  /* Style for nickname editing input */
+  #edit-alias{
+    width: 180px;
+    height: 30px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 10.4px;
+  }
+
+textarea{
+  resize: none;
+  height: 60px;
+  width: 100px;
+  border: 2px solid grey;
+  padding: 4px;
+}
+
+input {
+  padding-left: 4px;
+  border: 2px solid grey;
+}
+
+</style>
+<body onload="loadProfile()">
+
+<!-- Main container -->
+<div id="master">
+
+  <!-- Profile section -->
+  <div class="profile">
+
+    <!-- Page title -->
+    <h1 id="pagetitle">MY PROFILE</h1>
+
+    <!-- Action buttons for edit, save and cancel -->
+    <div class="buttons">
+      <!-- Button to switch to edit mode -->
+      <button type="button" class="edit-button" id="edit" onclick="toggleEditMode()"><img src="../images\edit.svg" class="icon-button">Change profile</button>
+      <!-- Save changes button (only visible in edit mode) -->
+      <button type="button" class="save-button edit-mode" onclick="saveChanges()">Save</button>
+      <!-- Cancel changes button (only visible in edit mode) -->
+      <button type="button" class="cancel-button edit-mode" onclick="cancelEdit()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Top section of the profile, containing the image and basic information -->
+  <div class="higher">
+    <!-- Profile image container -->
+    <div id="image">
+      <!-- Profile image -->
+      <img src="../images\icone_perfil.svg" id="profile-img">
+
+      <!-- Element for editing profile image -->
+      <div id="profile-img-edit">
+        <input type="file" id="profile-img-input" accept="image/*">
+        <!-- Buttons to save or cancel image editing -->
+      </div>
+    </div>
+
+    <!-- Section to view or edit profile information -->
+    <div class="profile-info edit-mode" id="profile-edit">
+      <!-- Input field to edit name -->
+      <h1 id="profile-name1"></h1>
+      
+      <label>You can also call me:</label>
+      <!-- Input field to edit nickname -->
+      <input type="text" id="edit-alias" value="">
+    </div>
+
+    <!-- Section to view profile information -->
+    <div class="profile-info" id="profile-view">
+      <!-- Profile name -->
+      <h1 id="profile-name2"></h1>
+      <label>You can also call me:</label>
+      <!-- Profile nickname -->
+      <p id="profile-alias"></p>
+    </div>
+  </div>
+
+  <!-- Horizontal line -->
+  <hr>
+
+  <!-- Lower section with columns for different types of information -->
+  <div class="bottom">
+    <!-- Column for languages ​​and interests -->
+    <div class="column">
+      <!-- Section title -->
+      <div class="principaltitle">
+        <img src="../images\info.svg" class="icon-img">
+        <h3 id="section">My Informations</h3>
+      </div>
+      <!-- Language section -->
+      <div class="section" id="languages-section">
+        <h3>Languages</h3>
+        <div class="items" id="languages-view">
+          <span id="language-list"></span>
+        </div>
+        <div class="edit-mode" id="languages-edit">
+          <!-- Input field for editing languages ​​-->
+          <textarea type="text" id="edit-languages" value=""></textarea>
+        </div>
+      </div>
+
+      <!-- Interests section -->
+      <div class="section" id="interests-section">
+        <h3>Interests</h3>
+        <div class="items" id="interests-view">
+          <span id="interest-list"></span>
+        </div>
+        <div class="edit-mode" id="interests-edit">
+          <!-- Input field for editing interests -->
+          <textarea type="text" id="edit-interests" value=""></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social media column -->
+    <div class="column" id="social-medias-section">
+      <!-- Section title -->
+      <div class="principaltitle" id="socialmedia">
+        <img src="../images\cam.svg" class="icon-img">
+        <h3>My social medias</h3>
+      </div>
+      <div class="items" id="social-medias-view">
+
+        <!-- List of social medias -->
+        <div class="social-media">
+          <img src="../images\insta.svg" class="icon-img">
+          <span class="section-social" id="social-media-1"></span>
+        </div>
+
+        <div class="social-media">
+          <img src="../images\link.svg" class="icon-img">
+          <span class="section-social" id="social-media-2"></span>
+          </div>
+
+        <div class="social-media">
+          <img src="../images\face.svg" class="icon-img">
+          <span class="section-social" id="social-media-3"></span>
+        </div>
+
+        <div class="social-media">
+          <img src="../images\x.svg" class="icon-img">
+          <span class="section-social" id="social-media-4"></span>
+        </div>
+
+      </div>
+      <div class="edit-mode" id="social-medias-edit">
+
+        <!-- Input fields for editing social medias -->
+        <div class="social-media">
+          <img src="../images\insta.svg" class="icon-img">
+          <input type="text" class="section-social" id="edit-social-media-1" value="">
+        </div>
+        
+        <div class="social-media">
+          <img src="../images\link.svg" class="icon-img">
+          <input type="text" class="section-social" id="edit-social-media-2" value="">
+        </div>
+
+        <div class="social-media">
+          <img src="../images\face.svg" class="icon-img">
+          <input type="text" class="section-social" id="edit-social-media-3" value="">
+        </div>
+
+        <div class="social-media">
+          <img src="../images\x.svg" class="icon-img">
+          <input type="text" class="section-social" id="edit-social-media-4" value="">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column for more information about the user -->
+    <div class="column" id="more-about-me-section">
+      <!-- Section title -->
+      <div class="principaltitle">
+        <img src="../images\about.svg" class="icon-about">
+        <h3>More about me</h3>
+      </div>
+      <div id="more-about-me-view">
+        <!-- Hobbies section -->
+        <div class="section">
+          <h3>My hobbies</h3>
+          <span id="hobbies"></span>
+        </div>
+        <!-- Bio section -->
+        <div class="section">
+            <h3>My bio</h3>
+            <span id="bio"></span>
+        </div>
+        </div>
+      
+      <div class="edit-mode" id="more-about-me-edit">
+        <!-- Input fields for editing hobbies and bio -->
+        <div class="section">
+          <h3>My hobbies</h3>
+          <textarea id="edit-hobbies"></textarea>
+        </div>
+        <div class="section">
+          <h3>My bio</h3>
+          <textarea id="edit-bio"></textarea>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+    <script>
+      // Save profile image
+    async function saveProfileImg() {
+    const fileInput = document.getElementById('profile-img-input');
+    const file = fileInput.files[0];
+
+    if (file) {
+      const formData = new FormData();
+      formData.append('profile_photo', file);
+
+      try {
+        const response = await fetch('/student/uploadProfilePhoto', {
+          method: 'POST',
+          body: formData,
+          credentials: 'include' // Inclui cookies para manipulação de sessão, se necessário
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Profile photo uploaded successfully:', data);
+
+          // Atualize a interface com a nova URL da foto de perfil, se necessário
+          const profileImg = document.getElementById('profile-img');
+          profileImg.src = data.profile_photo;
+
+        } else {
+          const errorData = await response.json();
+          console.error('Error uploading profile photo:', errorData.error);
+          alert('Failed to upload profile photo');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while uploading profile photo');
+      }
+    }
+      }
+    
+      // Toggle edit mode for sections
+      function toggleEditMode() {
+        const elements = document.querySelectorAll('.edit-mode');
+        const isEditing = elements[0].style.display === 'block';
+    
+        elements.forEach(el => {
+          el.style.display = isEditing ? 'none' : 'block';
+        });
+    
+        const viewElements = document.querySelectorAll('#profile-view, #languages-view, #interests-view, #social-medias-view, #more-about-me-view');
+        viewElements.forEach(el => {
+          el.style.display = isEditing ? 'block' : 'none';
+        });
+    
+        const editButton = document.querySelector('.edit-button');
+        const saveButton = document.querySelector('.save-button');
+        const cancelButton = document.querySelector('.cancel-button');
+    
+        editButton.style.display = isEditing ? 'block' : 'none';
+        saveButton.style.display = isEditing ? 'none' : 'block';
+        cancelButton.style.display = isEditing ? 'none' : 'block';
+
+        const profileImgEdit = document.getElementById('profile-img-edit');
+        profileImgEdit.style.display = profileImgEdit.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Save profile changes
+      function saveChanges() {
+      saveProfileImg(); // Chama a função para salvar a imagem de perfil
+
+      const profileData = {
+        alias: document.getElementById('edit-alias').value,
+        languages: document.getElementById('edit-languages').value,
+        interests: document.getElementById('edit-interests').value,
+        instagram: document.getElementById('edit-social-media-1').value,
+        linkedin: document.getElementById('edit-social-media-2').value,
+        facebook: document.getElementById('edit-social-media-3').value,
+        x: document.getElementById('edit-social-media-4').value,
+        hobbies: document.getElementById('edit-hobbies').value,
+        bio: document.getElementById('edit-bio').value,
+        profile_photo: document.getElementById('profile-img').src // Salva a URL da imagem de perfil atual
+      };
+
+      fetch('/update-profile', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(profileData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data) {
+          document.getElementById('profile-alias').textContent = profileData.alias;
+          document.getElementById('language-list').textContent = profileData.languages;
+          document.getElementById('interest-list').textContent = profileData.interests;
+          document.getElementById('social-media-1').textContent = profileData.instagram;
+          document.getElementById('social-media-2').textContent = profileData.linkedin;
+          document.getElementById('social-media-3').textContent = profileData.facebook;
+          document.getElementById('social-media-4').textContent = profileData.x;
+          document.getElementById('hobbies').textContent = profileData.hobbies;
+          document.getElementById('bio').textContent = profileData.bio;
+          document.getElementById('profile-img').src = profileData.profile_photo;
+
+          toggleEditMode();
+        } else {
+          alert('Failed to update profile');
+        }
+      })
+      .catch(error => {
+        console.error('Error updating profile:', error);
+        alert('An error occurred while updating the profile.');
+      });
+    }
+        
+          // Cancel profile changes
+          function cancelEdit() {
+            toggleEditMode();
+          }
+
+          function loadProfile() {
+  fetch('/getProfile')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro ao carregar perfil');
+      }
+      return response.json();
+    })
+    .then(profile => {
+          document.getElementById('profile-name1').textContent = profile.name;
+          document.getElementById('profile-name2').textContent = profile.name;
+          document.getElementById('profile-alias').textContent = profile.alias;
+          document.getElementById('language-list').textContent = profile.languages;
+          document.getElementById('interest-list').textContent = profile.interests;
+          document.getElementById('social-media-1').textContent = profile.instagram;
+          document.getElementById('social-media-2').textContent = profile.linkedin;
+          document.getElementById('social-media-3').textContent = profile.facebook;
+          document.getElementById('social-media-4').textContent = profile.x;
+          document.getElementById('hobbies').textContent = profile.hobbies;
+          document.getElementById('bio').textContent = profile.bio;
+
+          const profileImage = document.getElementById('profile-img');
+          profileImage.src = profile.photo;
+
+
+          // Preencher campos de edição
+          document.getElementById('edit-alias').value = profile.alias;
+          document.getElementById('edit-languages').value = profile.languages;
+          document.getElementById('edit-interests').value = profile.interests;
+          document.getElementById('edit-social-media-1').value = profile.instagram;
+          document.getElementById('edit-social-media-2').value = profile.linkedin;
+          document.getElementById('edit-social-media-3').value = profile.facebook;
+          document.getElementById('edit-social-media-4').value = profile.x;
+          document.getElementById('edit-hobbies').value = profile.hobbies;
+          document.getElementById('edit-bio').value = profile.bio;
+        })
+        .catch(error => {
+          console.error('Erro ao carregar perfil:', error);
+        });
+        }
+        </script>
+    </body>

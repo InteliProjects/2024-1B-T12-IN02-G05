@@ -1,0 +1,122 @@
+<!-- views/pages/resultDm1.ejs -->
+
+<!-- Styles for the result page -->
+<style>
+    /* Basic styling for the body element */
+    body {
+        display: flex; /* Use flexbox for layout */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        background-color: #f0f4f8; /* Light background color */
+        margin: 0; /* Remove default margin */
+        font-family: Arial, sans-serif; /* Set font family */
+        color: #253C56; /* Set text color */
+    }
+    /* Styling for the container holding the result */
+    .result-container {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        text-align: center; /* Center-align text */
+        padding: 40px; /* Padding for inner content */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        background-color: #ffffff; /* White background for container */
+        border-radius: 15px; /* Rounded corners */
+    }
+    /* Styling for the congratulations text */
+    .congratulations {
+        font-size: 2.2em; /* Increase font size */
+        color: #FBC102; /* Set text color */
+        margin-bottom: 20px; /* Margin below the text */
+        font-weight: bold; /* Bold text */
+    }
+    /* Styling for the result description text */
+    .result-text {
+        font-size: 1.5em; /* Increase font size */
+        margin: 20px 0; /* Add vertical margin */
+        color: #253C56; /* Text color */
+    }
+    /* Styling for the decision style text */
+    .decision-style {
+        font-size: 3em; /* Large font size */
+        font-weight: bold; /* Bold text */
+        color: #FBC102; /* Set text color */
+        margin-bottom: 50px; /* Margin below the text */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    }
+    /* Styling for the text sections */
+    .text-section {
+        text-align: left; /* Left-align text */
+        margin-bottom: 20px; /* Margin below each section */
+        width: 80%; /* Full width */
+        background-color: #f7f9fb; /* Light background for text sections */
+        padding: 20px; /* Padding for text sections */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for sections */
+    }
+    .text-section h2 {
+        font-size: 1.6em; /* Font size for titles */
+        font-weight: bold; /* Bold text */
+        margin-bottom: 10px; /* Margin below the title */
+        color: #253C56; /* Color for titles */
+    }
+    .text-section p {
+        margin: 10px 0; /* Add vertical margin */
+        line-height: 1.6; /* Line height for readability */
+        color: #253C56; /* Text color */
+    }
+</style>
+
+<!-- Body of the result page -->
+<body>
+    <div class="result-container">
+        <!-- Display congratulations message -->
+        <div class="congratulations">Congratulations on completing the questionnaire</div>
+        <!-- Display result description -->
+        <div class="result-text">Your decision-making style is...</div>
+        <!-- Placeholder for displaying the decision style -->
+        <div class="decision-style" id="decisionStyle"></div>
+
+        <div class="text-section">
+            <h2>Analytical</h2>
+            <p><strong>Ambiguity:</strong> People in this spectrum prefer to have an open-mind, they’re comfortable with uncertainty and are very open to taking risks.</p>
+            <p><strong>Task-oriented:</strong> People in this spectrum tend to prioritize data and knowledge, making decisions even if their partners disagree, seeking the best decision.</p>
+            <p>You like to consider all options before making a decision, aiming to apply logic in this process. You have the ability to think of very creative possibilities, but you only consider the most rational and responsible one. Due to the need to weigh all possibilities, this type of leadership can lead to indecision and slow decision-making. You like to formalize what has been decided.</p>
+        </div>
+        <!-- Conceptual description -->
+        <div class="text-section">
+            <h2>Conceptual</h2>
+            <p><strong>Ambiguity:</strong> People in this spectrum prefer to have an open-mind, they’re comfortable with uncertainty and are very open to taking risks.</p>
+            <p><strong>Social-oriented:</strong> People in this spectrum tend to prioritize people when making decisions, seek approval and validation from others and consider how their decisions impact others’ lives.</p>
+            <p>You like to take risks and make grand decisions based on creative ideas. Your expectations are always very high for the work you do, aiming to stand out from others. You tend to be a good communicator, negotiating your interests with others, although you do not value opposing opinions when they are not convenient for you. You like to formalize what has been decided.</p>
+        </div>
+        <!-- Directive description -->
+        <div class="text-section">
+            <h2>Directive</h2>
+            <p><strong>Structure:</strong> People in this spectrum prefer to have decisions made clear and quickly, they also tend to have defined processes and expectations.</p>
+            <p><strong>Task-oriented:</strong> People in this spectrum tend to prioritize data and knowledge, making decisions even if their partners disagree, seeking the best decision.</p>
+            <p>You are very direct in communicating your ideas, avoiding unnecessary details and disliking vague or messy concepts. Your goal is to be as assertive as possible, using rationality when making decisions and striving to be very effective. You have an aggressive nature, preferring to work alone whenever possible and informing others only when decisions are already made.</p>
+        </div>
+        <!-- Behavioral description -->
+        <div class="text-section">
+            <h2>Behavioral</h2>
+            <p><strong>Structure:</strong> People in this spectrum prefer to have decisions made clear and quickly, they also tend to have defined processes and expectations.</p>
+            <p><strong>Social-oriented:</strong> People in this spectrum tend to prioritize people when making decisions, seek approval and validation from others and consider how their decisions impact others’ lives.</p>
+            <p>You prioritize people's opinions and feelings when making decisions, often seeking validation from your peers to solidify concrete ideas. You are a persuasive communicator and have an empathetic nature, able to understand people's thoughts. This type of leadership does not fear change and always seeks creative solutions, integrating ideas and envisioning future possibilities for your plans. Due to your boundless creativity, you tend to lose focus easily.</p>
+        </div>
+    </div>
+
+    
+    <!-- Script to display the decision style based on URL parameter -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            // Get the 'type' parameter value
+            const resultType = urlParams.get('type');
+            // Set the text content of the decision style element
+            document.getElementById('decisionStyle').textContent = resultType;
+        });
+    </script>
+</body>

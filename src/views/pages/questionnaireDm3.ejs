@@ -1,0 +1,297 @@
+<style>
+    body {
+        font-weight: 100;
+        justify-content: center;
+        font-family: 'Poppins';
+    }
+    
+    #master{
+        margin: 80px auto;
+        justify-content: center;
+        width: 80%; 
+        max-width: 1000px;
+        text-align: center; 
+    }
+    
+    body h1 {
+        font-size: 2.5rem;
+        color: #f9ab00;
+        text-align: center;
+    }
+    
+    body h2 {
+        font-size: 2rem;
+        color: #253C56;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    
+    .question {
+        text-align: center;
+        background-color: #f9ab00;
+        border-radius: 1.25rem;
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: block;
+        flex-direction: row;
+        margin-bottom: 1.25rem;
+        justify-content: center;
+    }
+    
+    .title {
+        box-sizing: border-box;
+        max-width: 90%; 
+        text-align: center;
+        margin: 0 auto; 
+        padding: 0 1rem;
+    }
+    
+    .options{
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: top;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    .options label {
+        display: flex;
+        margin-left: 5px;
+        margin-right: 20px;
+        justify-content: center;
+    }
+    
+     .alternativa1 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        background-color: #f3c666;
+        border-radius: 20px;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+        max-width: fit-content;
+        padding-right: 2rem;
+        padding-left: 1.5rem;
+        line-height: 150%;
+     }
+    
+     .alternativa2 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        background-color: #f3c666;
+        border-radius: 20px;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+        max-width: fit-content;
+        padding-right: 2rem;
+        padding-left: 1.5rem;
+        line-height: 150%;
+        text-align: center;
+     }
+    
+     .alternativa {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+    
+    .alternativa1, .alternativa2 {
+        flex: 1;
+        box-sizing: border-box;
+        max-width: 45%; 
+        text-align:center;
+        align-items: center;
+    }
+    
+    #submitBtn {
+        background-color: #253C56;
+        color: #fff;
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-radius: 20px;
+        text-align: center;
+        align-self: center;
+    }
+    
+    </style>
+    <body>
+        <div id = "master">
+            <h1>Discover your decision-making style</h1>
+            <h2>Decision-Making - Questionnaire</h2>
+            
+            <!-- Form for submitting answers -->
+            <form id="questionnaireDm">
+                <!-- Question 1 -->
+                <div class="question">
+                    <div class="title">
+                    <label for="q1">When working on projects I :</label><br>
+                    </div>
+                    <div class="alternativa">
+                        <div class= 'alternativa1'>
+                            <input type="radio" id="q1a1" name="q1" value="a" required>
+                            <label for="q1a1">like tasks that are clear and have defined outcomes.</label><br>
+                        </div>
+                        <div class= 'alternativa2'>
+                            <input type="radio" id="q1a2" name="q1" value="b">
+                            <label for="q1a2">am comfortable when task and outcomes are not well defined.</label>
+                        </div>      
+                    </div>
+                </div><br>
+                
+                <!-- Question 2 -->
+                <div class="question">
+                    <div class="title">
+                    <label for="q2">If there are major changes during a project I:</label><br>
+                    </div>
+                    <div class="alternativa">
+                        <div class="alternativa1">
+                            <input type="radio" id="q2a1" name="q2" value="a" required>
+                            <label for="q2a1">tend to be annoyed because I like to stick to the original work.</label><br>
+                        </div>
+                        <div class="alternativa2">
+                            <input type="radio" id="q2a2" name="q2" value="b">
+                            <label for="q2a2">easily adapt the work plan to the changes.</label><br>
+                        </div>
+                    </div>
+                </div><br>
+    
+                <!-- Question 3 -->
+                <div class="question">
+                    <div class="title">
+                    <label for="q3">When it comes to planning I rather:</label><br>
+                    </div>
+                    <div class="alternativa">
+                        <div class="alternativa1">
+                            <input type="radio" id="q3a1" name="q3" value="a" required>
+                            <label for="q3a1">make decisions quickly without knowing the outcomes exactly.</label><br>
+                        </div>
+                        <div class="alternativa2">
+                            <input type="radio" id="q3a2" name="q3" value="b">
+                            <label for="q3a2">prepare a few options and think through them before I decide.</label>
+                        </div>
+                    </div>
+                </div><br>
+    
+                <!-- Question 4 -->
+                <div class="question">
+                    <div class="title">
+                    <label for="q4">In projects I am more a person who:</label><br>
+                    </div>
+                    <div class="alternativa">
+                        <div class="alternativa1">
+                            <input type="radio" id="q4a1" name="q4" value="a" required>
+                            <label for="q4a1">relies on facts and researched data for analyzing the problem and proposing solutions.</label><br>
+                        </div>
+                        <div class="alternativa2">
+                            <input type="radio" id="q4a2" name="q4" value="b">
+                            <label for="q4a2">sees the underlying problem as well as potential solutions, which might not be visible for others.</label>
+                        </div>
+                    </div>
+                </div><br>
+    
+                <!-- Question 5 -->
+                <div class="question">
+                    <div class="title">
+                    <label for="q5">Between two options, choose one that describes you the best.</label><br>
+                    </div>
+                    <div class="alternativa">
+                        <div class="alternativa1">
+                            <input type="radio" id="q5a1" name="q5" value="a" required>
+                            <label for="q5a1">I value the relations within my team and try to make each member feel included and important. I appreciate their opinion and seek their approval before making a final decision. My big motivation is to maintain harmony.</label><br>
+                        </div>
+                        <div class="alternativa2">
+                            <input type="radio" id="q5a2" name="q5" value="b">
+                            <label for="q5a2">I value co-workers that have a sense of purpose and can speak and act concretely. I prefer to take action, rather than dreaming of impossible opportunities. I prefer to rely on rules in order to move forward. I am motivated by the results my decisions will bring.</label>
+                        </div>
+                    </div>
+                </div><br>
+    
+                <!-- Question 6 -->
+                <div class="question">
+                    <div class="title">
+                    <label for="q6">Between two options, choose one that describes you the best.<br>You are a team leader and have a worker that is showing poor results, which normally would lead to dismissal of this worker. However, you are also aware that his life circumstances has changed drastically, which causes stress. And might explain his poor performance. Because he/she does not deliver the expected results, other workers do his/her job and become unsatisfied with extra workload. You already tried talking to him/her, but situation hasn`t changed much. What would be you action plan?</label><br>
+                    </div>
+                    <div class="alternativa">
+                        <div class="alternativa1">
+                            <input type="radio" id="q6a1" name="q6" value="a" required>
+                            <label for="q6a1">I understand that everyone can encounter problems, but I also have responsibilities as a leader to deliver results and care for the whole team, so I will have to replace this person.</label>
+                        </div>
+                        <div class="alternativa2">
+                            <input type="radio" id="q6a2" name="q6" value="b">
+                            <label for="q6a2">I will do my best to make things work out for both sides. The worker will stay employed, I accept lesser performance,  I will see if I can adjust the work and will discuss with other workers why they might have to help the worker.</label>
+                        </div>
+                    </div>
+                </div><br>
+    
+                <!-- Question 7 -->
+                <div class="question">
+                    <div class="title">
+                    <label for="q7">Between two options, choose one that describes you the best.<br>You are a team leader and have a worker that is showing poor results, which normally would lead to dismissal of this worker. However, you are also aware that his life circumstances has changed drastically, which causes stress. And might explain his poor performance. Because he/she does not deliver the expected results, other workers do his/her job and become unsatisfied with extra workload. You already tried talking to him/her, but situation hasn`t changed much. What would be you action plan?</label><br>
+                    </div>
+                    <div class="alternativa">
+                        <div class="alternativa1">
+                            <input type="radio" id="q7a1" name="q7" value="a" required>
+                            <label for="q7a1">Because I need a job, I will accept the offer. After all, I can not change the whole system just by refusing this offer.</label><br>
+                        </div>
+                        <div class="alternativa2">
+                            <input type="radio" id="q7a2" name="q7" value="b">
+                            <label for="q7a2">I will turn down the offer as I do not want to be working for a company under this investigation. I must make a stand for the underpaid workforce, even if I need a job.</label>
+                        </div>
+                    </div>
+                </div><br>
+                
+                <!-- Submit button -->
+                <button type="submit" id="submitBtn">Submit</button>
+            </form>
+    
+        </div>
+    
+    <!-- JavaScript for form submission -->
+    <script>
+        // Add an event listener to the submit button
+        document.getElementById("submitBtn").addEventListener('click', async (event) => {
+            // Prevent default form submission behavior
+            event.preventDefault();
+            // Get the form element
+            const form = document.getElementById("questionnaireDm");
+            // Create a FormData object from the form
+            const formData = new FormData(form);
+            // Convert FormData to a plain object
+            const data = Object.fromEntries(formData.entries());
+    
+            try {
+                // Send a POST request to the server with form data
+                const response = await fetch('/questionnaireDm3Results', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data), // Convert data to JSON format
+                });
+    
+                // If the response is successful (status code 200-299)
+                if (response.ok) {
+                    // Parse the response JSON
+                    const result = await response.json();
+                    // Redirect to the result page based on the response
+                    window.location.href = `/resultDm3?type=${result.result}`;
+                } else {
+                    // Log the response error
+                    console.error('Response error:', response.statusText);
+                }
+            } catch (error) {
+                // Log any errors that occur during the request
+                console.error('Error:', error);
+            }
+        });
+    </script>
+    
+    </body>
+    </html>
+    

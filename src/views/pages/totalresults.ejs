@@ -1,0 +1,317 @@
+<style>
+    /* Defining color variables */
+    :root {
+        --dark-blue: #253C56;
+        --yellow: #F9AB00;
+        --black: #000000;
+        --white: #FFFFFF;
+        --grey: #D9D9D9;
+    }
+
+    /* Style for the body of the page */
+    body {
+        font-family: Poppins, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Style for the main container */
+    .container {
+        width: 80%;
+        margin: 0;
+    }
+
+    /* Style for the results section */
+    .results {
+        margin: 2em 0;
+    }
+
+    /* Style for the titles */
+    .results h1,
+    .time-results h1 {
+        text-align: left;
+        font-size: 32px;
+        font-weight: bold;
+        color: var(--dark-blue);
+        margin: 30px 0px;
+    }
+
+    /* Style for the decision-making section */
+    .decision-making {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        gap: 20px;
+        align-items: center;
+    }
+
+    /* Style for the result boxes */
+    .result-box {
+        background-color: var(--yellow);
+        border-radius: 17.6px;
+        text-align: center;
+        align-items: center;
+        padding: 10px;
+        width: 240px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Style for the titles inside the result boxes */
+    .result-box h2 {
+        font-size: 24px;
+        color: var(--black);
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+
+    /* Style for the subtitles inside the result boxes */
+    .result-box h1 {
+        font-size: 30px;
+        color: var(--black);
+        text-align: center;
+        align-content: center;
+        width: 180px;
+        height: 55px;
+        margin-bottom: 0;
+        margin-top: 12px;
+    }
+
+    /* Style for the images inside the result boxes */
+    .result-box img {
+        width: 90px;
+        height: 90px;
+        display: block;
+        margin: 0;
+    }
+
+    /* Style for the temporal results section */
+    .time-results {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    /* Style for the circles */
+    .circle {
+        width: 135px;
+        height: 135px;
+        background-color: var(--white);
+        border-radius: 50%;
+        border: 20px solid var(--dark-blue);
+        box-sizing: border-box;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+
+    /* Style for the information inside the circles */
+    .circle-info {
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: 250px;
+        height: 380px;
+        background-color: var(--grey);
+        padding: 10px;
+        margin-top: 28px;
+        border-radius: 17.6px;
+        color: var(--white);
+        z-index: 1;
+    }
+
+    /* Display the information when hovering over the circle */
+    .circle:hover .circle-info {
+        display: block;
+    }
+
+    /* Style for the texts inside the circles */
+    .circle h1 {
+        color: var(--black);
+        font-size: 35px;
+    }
+
+    /* Style for the tracks section */
+    .tracks {
+        position: relative;
+        width: 1100px;
+        height: 600px;
+        margin-top: 50px;
+        margin-bottom: 500px;
+        background-image: url('images/roadmap.svg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Style for the members inside the circle information */
+    .member {
+        background-color: var(--white);
+        border-radius: 17.6px;
+        color: var(--black);
+        height: 55px;
+        padding: 5px;
+        margin: 12px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 3;
+    }
+
+    .member h3,
+    .member p {
+        font-size: 20px;
+        margin: 1px;
+    }
+
+    /* Position each circle according to the image layout */
+    .circle:nth-child(1) {top: 48px; left: 120px;}
+    .circle:nth-child(2) {top: 48px; left: 460px;}
+    .circle:nth-child(3) {top: 150px; left: 700px;}
+    .circle:nth-child(4) {top: 310px; left: 830px;}
+    .circle:nth-child(5) {top: 310px; left: 480px;}
+    .circle:nth-child(6) {top: 320px; left: -10px;}
+    .circle:nth-child(7) {top: 490px; left: 330px;}
+    .circle:nth-child(8) {top: 490px; left: 830px;}
+</style>
+<body>        
+    <div class="container">
+        <!-- Section to display the results -->
+        <section class="results">
+            <h1>MY RESULTS</h1>
+            <div class="decision-making">
+                <!-- Box for the decision-making result -->
+                <div class="result-box" id="decisionMakingResult">
+                    <h2>Decision Making</h2>
+                    <img src="images/Directive.png" alt="Directive">
+                    <h1 id="decisionResultText">Loading...</h1> <!-- Placeholder for dynamic text -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section to display the temporal results -->
+        <section class="time-results">
+            <h1>TEMPORAL RESULTS</h1>
+            <div class="tracks">
+                <!-- Circle with information about R1 -->
+                <div class="circle">
+                    <h1>R1</h1>
+                    <div class="circle-info">
+                        <div class="circle-info-content">
+                            <!-- Information about the members inside the R1 circle -->
+                            <div class="member">
+                                <h3>Me</h3>
+                                <p id="resultDm1"></p>
+                            </div>
+                            <div class="member">
+                                <h3>Iasmim</h3>
+                                <p>Directive</p>
+                            </div>
+                            <div class="member">
+                                <h3>Carolina</h3>
+                                <p>Analytical</p>
+                            </div>
+                            <div class="member">
+                                <h3>Larissa</h3>
+                                <p>Directive</p>
+                            </div>
+                            <div class="member">
+                                <h3>Matheus</h3>
+                                <p>Conceptual</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional circles for R2 to R8 -->
+                <div class="circle">
+                    <h1>R2</h1>
+                    <div class="circle-info">
+                        <div class="circle-info-content">
+                            <!-- Information about the members inside the R1 circle -->
+                            <div class="member">
+                                <h3>Me</h3>
+                                <p>Directive</p>
+                            </div>
+                            <div class="member">
+                                <h3>Iasmim</h3>
+                                <p>Conceptual</p>
+                            </div>
+                            <div class="member">
+                                <h3>Carolina</h3>
+                                <p>Conceptual</p>
+                            </div>
+                            <div class="member">
+                                <h3>Larissa</h3>
+                                <p>Analytical</p>
+                            </div>
+                            <div class="member">
+                                <h3>Matheus</h3>
+                                <p>Directive</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="circle">
+                    <h1>R3</h1>
+                </div>
+            
+                <div class="circle">
+                    <h1>R4</h1>
+                </div>
+            
+                <div class="circle">
+                    <h1>R5</h1>
+                </div>
+            
+                <div class="circle">
+                    <h1>R6</h1>
+                </div>
+            
+                <div class="circle">
+                    <h1>R7</h1>
+                </div>
+            
+                <div class="circle">
+                    <h1>R8</h1>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/api/totalresult', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+    
+                const data = await response.json();
+    
+                // Example: Update DOM elements with fetched data
+                const resultDm1Text = data.resultDm1;
+                const resultDm2Text = data.resultDm2;
+                const resultDm3Text = data.resultDm3;
+    
+                document.getElementById('decisionResultText').textContent = resultDm1Text;
+                document.getElementById('resultDm1').textContent = resultDm1Text;
+                document.getElementById('resultDm3').textContent = resultDm3Text;
+            } catch (error) {
+                console.error('Error:', error);
+                // Handle error display or retry logic
+            }
+        });
+    </script>
+    
+</body>

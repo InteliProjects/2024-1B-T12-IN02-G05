@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title of the web page -->
+    <title>TechBridge</title>
+    <!-- Link to Google Fonts to include the Poppins font family -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <!-- Meta tag for responsive design, ensuring the page scales correctly on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+        /* Styles for the body of the page */
+        body {
+            margin: 0;
+            padding: 0;
+            color: var(--azul-escuro);
+            display: flex;
+            flex-direction: column;
+            background: whitesmoke;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        /* Header styles */
+        header {
+            background-color: #253C56;
+            color: var(--branco);
+            padding: 10px 20px;
+            width: 100%;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            row-gap: 60px;
+        }
+
+        /* Header button styles */
+        header button {
+            background: none;
+            border: none;
+            color: var(--branco);
+            font-size: 24px;
+            cursor: pointer;
+            width: auto;
+            padding: 0;
+        }
+        /* Container for the top section of the header */
+        .containerTop {
+            background-color: #253C56;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-height: 40px;
+        }
+        /* Container for the logo */
+        .logoContainer {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Logo image styles */
+        .logoContainer img {
+            max-height: 56px;
+        }
+        /* Container for the profile icon */
+        .profileContainer {
+            max-width: 10px;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            margin-right: 100px;
+        }
+        /* Profile icon image styles */
+        .profileContainer img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        /* Menu icon styles */
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #253C56;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        /* Sidebar link and dropdown button styles */
+        .sidebar a, .dropdown-btn {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        /* Sidebar link and dropdown button hover effect */
+        .sidebar a:hover, .dropdown-btn:hover {
+            background-color: #575757;
+        }
+        /* Close button styles for the sidebar */
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .sidebar #groupMembersContainer {
+            font-size: 13px;
+            padding-left: 30px;
+        }
+        /* Main content styles */
+        #main {
+            transition: margin-left .5s;
+            flex-grow: 1;
+            padding-bottom: 60px;
+            max-width: 100%;
+            
+        }
+        .content {
+            margin: 0px;
+        }
+        footer {
+            background-color: #253C56;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+           
+
+        }
+
+        footer div {
+            margin-top: 10px;
+            margin-left: 0px;
+        }
+
+        footer a img {
+            width: 30px;
+            height: auto;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        .footer a {
+            color: var(--branco);
+            margin: 0 10px;
+        }
+
+        .icon {
+            width: 24px; /* Adjust the width as needed */
+            height: 24px; /* Adjust the height as needed */
+            margin-right: 10px; /* Space between the icon and text */
+            vertical-align: middle; /* Align icons vertically with the text */
+        }    
+        
+        #logoutButton {
+            background-color: #253C56;
+            color: #fff;
+            border: none;
+            font-family: 'Poppins';
+            font-size: 18px;
+            text-align: center;
+        }
+        .sidebar a:hover, #logoutButton:hover {
+            background-color: #575757;
+        }
+    </style>
+
+</head>
+<body>
+<!-- Header section of the page -->
+<header>
+    <div class="containerTop">
+        <!-- Menu icon to open the sidebar -->
+        <span class="menu-icon" onclick="openNav()">&#9776;</span>
+        <div class="logoContainer">
+            <!-- Logo image -->
+            <img src="../images/logo.png" id="Logo" alt="Logo">
+        </div>
+        <!-- Profile icon linked to the user's profile page -->
+        <a class="profileContainer" href="/myprofile">
+            <img src="https://res.cloudinary.com/da5ssuj4y/image/upload/v1717503752/Techbridge/perfil.png" id="Icone" alt="Profile Icon">
+        </a>
+    </div>
+</header>
+
+<!-- Sidebar navigation -->
+<div id="Sidebar" class="sidebar">
+    <!-- Close button for the sidebar -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <!-- Sidebar links -->
+    <a href="/homepage-student" ><img src="../images/home.svg" class="icon" >Home</a>
+    <a href="/totalresults"><img src="../images/dashboard.svg" class="icon" >Total Results</a>
+    <a href="/homepage-student#activities-carousel"><img src="../images/calendarSide.svg" class="icon" >Activities Carousel</a>
+    <a href="/homepage-student#happiness"><img src="../images/happy.svg" class="icon" >Happiness Meter</a>
+    <a><img src="../images/icon-group.svg" class="icon">My group</a>
+    <!-- Container for group members -->
+    <div id="groupMembersContainer">
+        <a href="#" id="groupMember1">Loading...
+        </a>
+    </div>
+    <button id="logoutButton"> Logout </button>
+</div>
+
+<!-- Main content area -->
+<div id="main">
+    <div class="content">
+        <!-- Placeholder for dynamically injected content -->
+        <%- body %>
+    </div>
+</div>
+
+<!-- Footer section -->
+<footer>
+    <p>TechBridge Version 1.1.1</p>
+    <!-- Social media links (if any) would go here -->
+</footer>
+
+<script>
+    // Function to open the sidebar
+    function openNav() {
+      document.getElementById("Sidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+  
+      // Fetch the group members from the server
+      fetch('/sideBarGroup')
+        .then(response => response.json())
+        .then(data => {
+          const groupMembersContainer = document.getElementById("groupMembersContainer");
+          groupMembersContainer.innerHTML = ''; // Clear existing content
+  
+          // Process and display the fetched group members
+          data.forEach((member, index) => {
+            const memberElement = document.createElement('a');
+            memberElement.textContent = member.name;
+            memberElement.href = `/group-profile/${member.userId}`; // Ensure the URL is correctly formed
+            groupMembersContainer.appendChild(memberElement);
+          });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('/getProfile')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(profile => {
+                const profileImage = document.getElementById('Icone');
+                profileImage.src = profile.photo || "https://res.cloudinary.com/da5ssuj4y/image/upload/v1717503752/Techbridge/perfil.png";
+            })
+            .catch(error => {
+                console.error('Erro ao carregar a imagem de perfil:', error);
+            });
+    });
+  
+    // Function to close the sidebar
+    function closeNav() {
+        // Reset the sidebar width and main content margin
+        document.getElementById("Sidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "-40px";
+    }
+  </script>
+  
+</body>
+</html>

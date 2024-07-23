@@ -1,0 +1,375 @@
+<!-- CSS for styling the login page -->
+
+<style>
+    /* Color Palette */
+    :root {
+        --azul-escuro: #182436; /* Dark blue */
+        --amarelo-brilhante: #FBC202; /* Bright yellow */
+        --preto: #000000; /* Black */
+        --branco: #FFFFFF; /* White */
+    }
+
+    .login header,
+    .login footer {
+        display: none; /* Hide header and footer on the login page */
+    }
+
+ 
+    /* Typography */
+    body {
+        margin-top: 10%;
+        font-family: 'Poppins';
+    }
+
+    a {
+        color: #FFFFFF; /* White links */
+    }
+
+    h1, h2, h3 {
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+        line-height: 80px;
+    }
+
+    h1 .b {
+        color: #FFFFFF; /* White text for class .b inside h1 */
+        font-size: 25px;
+        line-height: 80px;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 60px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    /* Header */
+    header {
+        background-color: #253C56;
+        color: var(--branco);
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    header nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        row-gap: 60px;
+    }
+
+    header button {
+        background: none;
+        border: none;
+        color: var(--branco);
+        font-size: 24px;
+        cursor: pointer;
+        width: auto;
+        padding: 0;
+    }
+
+    header img {
+        height: 60px;
+        width: auto;
+        max-width: 100%;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .banner {
+        width: 100%;
+    }
+
+    /* Content */
+    .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+    }
+
+    .group-select, .box {
+        background-color: #223647;
+        padding: 10px 40px 30px 40px;
+        border-radius: 27px;
+        width: 25%;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    .box {
+        background-color: #253C56;
+        color: var(--branco);
+        margin: 0px;
+        width: 600px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .group-select {
+        color: #fff;
+    }
+
+    .group-select select, .form-group input, .form-group select {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input[type="submit"] {
+        background-color: #F9AB00;
+        color: var(--branco);
+        border: none;
+        cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+        background-color: #bd8202;
+    }
+
+    .bottom-form {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    button {
+        background-color: var(--amarelo-brilhante);
+        color: var(--preto);
+        border: none;
+        width: 200px;
+        padding: 10px 50px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    .button-container button:first-child {
+        margin-right: 10px;
+    }
+
+    .button-container button:last-child {
+        margin-left: 10px;
+    }
+
+    .group-info {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .group-average {
+        background-color: #32a852;
+        color: var(--branco);
+        padding: 20px;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+    }
+
+    .group-average p {
+        margin: 0;
+        font-size: 2em;
+    }
+
+    .group-details {
+        background-color: #223647;
+        color: var(--branco);
+        padding: 20px;
+        border-radius: 8px;
+        width: 60%;
+    }
+
+    .group-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .group-list li {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #fff;
+    }
+
+    .group-list img.avatar {
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .group-list img.flag {
+        margin-left: auto;
+    }
+
+    .question {
+        margin: 30px 100px;
+        padding: 20px;
+        background-color: #fff; /* White */
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
+    }
+
+    .question input[type="radio"] {
+        margin-right: 5px;
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--azul-escuro);
+        color: var(--branco);
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+        bottom: 0;
+    }
+
+    footer div {
+        margin-top: 10px;
+    }
+
+    footer a img {
+        width: 30px;
+        height: auto;
+        margin: 0 10px;
+        vertical-align: middle;
+    }
+
+    .footer a {
+        color: var(--branco);
+        margin: 0 10px;
+    }
+
+    .tag {
+        background-color: var(--azul-escuro);
+        color: var(--branco);
+        padding: 5px 10px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    .bt {
+        width: 30px;
+        padding: 0px 30px;
+    }
+
+
+    /* Space additional links */
+    #additional-links {
+        justify-content: space-between;
+    }
+
+    /* Style for error message */
+    .error-message {
+        color: red;
+        margin-bottom: 20px;
+    }
+</style>
+
+<!-- HTML structure for the login form -->
+<body class="login"> 
+    <!-- Container for the login form -->
+    <div id="loginForm" class="box">
+        <h1 class="b">Login</h1>
+        <!-- Display error message -->
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        <!-- Login form -->
+        <form id="login-form">
+            <!-- Input field for email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+            </div>
+            <!-- Input field for password -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password..." required>
+            </div>
+            <!-- Login button -->
+            <div class="bottom-form" id="login-buttons">
+                <button type="submit" id="btlogin">Login</button>
+                <a href="/register-user">Create Account</a>
+            </div>
+        </form>
+
+    <!-- JavaScript to handle form submission and error display -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loginForm = document.getElementById('loginForm');
+            const errorMessageDiv = document.getElementById('errorMessage');
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', async function(e) {
+                    e.preventDefault(); // Prevent form from submitting the default way
+                    const email = document.getElementById('email').value;
+                    const password = document.getElementById('password').value;
+
+                    try {
+                        const response = await fetch('/login', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ email, password })
+                        });
+
+                        const data = await response.json();
+
+                        if (data.redirectUrl) {
+                            window.location.href = data.redirectUrl; // Redirect if login is successful
+                        } else {
+                            // Display error message
+                            errorMessageDiv.textContent = data.message;
+                            errorMessageDiv.style.display = 'block';
+                        }
+                    } catch (error) {
+                        // Display error message
+                        errorMessageDiv.textContent = 'An error occurred. Please try again.';
+                        errorMessageDiv.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>

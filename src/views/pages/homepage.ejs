@@ -1,0 +1,475 @@
+<!-- Define the overall structure and styling for the web page -->
+<style>
+    /* Set the basic styles for the body element including display, font, and color */
+    body {
+        font-family: 'Poppins';
+        color: #253C56;
+        position: absolute;
+
+    }
+
+    /* Style for the main carousel container */
+    .carousel {
+        position: relative; /* Positioned relative to its normal position */
+        max-width: 80%; /* Maximum width of 80% of its container */
+        margin: auto; /* Center the carousel */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        overflow-y: hidden; /* Disable vertical scrolling */
+        white-space: nowrap; /* Prevent text from wrapping */
+        padding: 20px; /* Padding inside the carousel */
+    }
+
+    /* Style for the inner container of the carousel that holds the items */
+    .carousel-inner {
+        display: inline-flex; /* Inline-flex to keep items in a row */
+        white-space: nowrap; /* Prevent text from wrapping */
+    }
+
+    /* Style for individual items in the carousel */
+    .carousel-item {
+        display: inline-block; /* Inline-block to allow multiple items in a row */
+        width: 450px; /* Fixed width for each item */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        padding: 20px; /* Padding inside each item */
+        background-color: #F9AB00; /* Background color for the item */
+        border-radius: 15px; /* Rounded corners */
+        margin-right: 20px; /* Space between items */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        position: relative; /* Positioned relative to its normal position */
+    }
+
+    /* Style for the header within each carousel item */
+    .carousel-item h5 {
+        background-color: #F3C666; /* Background color */
+        padding: 10px; /* Padding inside the header */
+        border-radius: 15px; /* Rounded corners */
+        font-family: 'Poppins'; /* Font family */
+        font-size: 1.2em; /* Font size */
+        text-align: center; /* Center-aligned text */
+    }
+
+    /* Style for the paragraph within each carousel item */
+    .carousel-item p {
+        background-color: #F3C666; /* Background color */
+        max-width: 80%; /* Maximum width */
+        padding: 10px; /* Padding inside the paragraph */
+        border-radius: 15px; /* Rounded corners */
+        font-size: 1em; /* Font size */
+        font-family: 'Poppins'; /* Font family */
+        white-space: normal; /* Allow text wrapping */
+        word-wrap: break-word; /* Break long words to wrap to the next line */
+        align-items: center; /* Center-aligned items */
+        margin-left: 30px; /* Left margin */
+    }
+
+    /* Style for the footer section within each carousel item */
+    .carousel-item .item-footer img {
+        width: 20px; /* Fixed width for the image */
+        height: 20px; /* Fixed height for the image */
+        margin-right: 10px; /* Right margin */
+    }
+
+    /* Style for the text within the footer section */
+    .carousel-item .item-footer span {
+        max-width: 50%; /* Maximum width */
+        text-align: center; /* Center-aligned text */
+        margin-top: 10px; /* Top margin */
+        background-color: #F3C666; /* Background color */
+        padding: 10px; /* Padding inside the text */
+        border-radius: 20px; /* Rounded corners */
+        font-size: 0.9em; /* Font size */
+        font-family: 'Poppins'; /* Font family */
+        font-weight: 600; /* Font weight */
+    }
+
+    /* Style for the button within the footer section */
+    .carousel-item .item-footer button {
+        background-color: #14ab09; /* Background colo   r */
+        align-items: flex-end; /* Align items to the end */
+    }
+
+    /* Banner section styles */
+    .banner {
+        position: relative; /* Positioned relative to its normal position */
+        margin-left: 0px; 
+        max-width: 100%;  
+    }
+    .imageBanner {
+        position: relative; /* Positioned relative to its normal position */
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;       
+    }
+    .textBanner {
+        position: absolute; /* Positioned absolutely within its container */
+        bottom: 130px; /* Positioned 130px from the bottom */
+        left: -10px; /* Positioned -10px from the left */
+        background-color: #253C56; /* Background color */
+        color: white; /* Text color */
+        padding: 20px; /* Padding inside the text banner */
+        border-radius: 20px; /* Rounded corners */
+        margin-left: -10px;
+
+    }
+    .textBanner h1 {
+        font-size: 50px; /* Font size */
+        font-weight: 700; /* Font weight */
+        text-align: left; /* Left-aligned text */
+        margin-top: 0; /* No top margin */
+        margin-bottom: 0; /* No bottom margin */
+        margin-left: 15px;
+    }
+    .textBanner h2 {
+        margin-top: 0; /* No top margin */
+        margin-bottom: 0; /* No bottom margin */
+        margin-left: 15px;
+        font-size: 50px; /* Font size */
+        font-style: normal; /* Normal font style */
+        font-weight: 500; /* Font weight */
+        text-align: left; /* Left-aligned text */
+    }
+    .textBanner p {
+        margin-top: 0; /* No top margin */
+        margin-bottom: 0; /* No bottom margin */
+        margin-left: 15px;
+        font-size: 34px; /* Font size */
+        font-weight: 100; /* Font weight */
+        line-height: normal; /* Normal line height */
+    }
+
+    /* Happiness meter section styles */
+    .happiness-container {
+        display: flex; /* Flexbox layout */
+        flex-direction: column; /* Column layout */
+        align-items: flex-start; /* Align items to the start */
+        margin-bottom: 20px; /* Bottom margin */
+        margin-left: 70px; /* Left margin */
+    }
+    .happiness-meter {
+        display: flex; /* Flexbox layout */
+        flex-direction: column; /* Column layout */
+        align-items: center; /* Center-align items */
+        background-color: #253C56; /* Background color */
+        color: white; /* Text color */
+        border-radius: 15px; /* Rounded corners */
+        padding: 20px; /* Padding inside the meter */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        margin-bottom: 20px; /* Bottom margin */
+        margin-left: 130px; /* Left margin */
+    }
+    .happiness-meter .emoji {
+        font-size: 2em; /* Font size for emojis */
+    }
+    .happiness-meter .meter {
+        display: flex; /* Flexbox layout */
+        align-items: center; /* Center-align items */
+        margin: 10px 0; /* Vertical margin */
+    }
+    .happiness-meter .meter .emoji {
+        margin: 0 10px; /* Horizontal margin for emojis */
+    }
+    .happiness-meter .slider {
+        width: 300px; /* Fixed width for the slider */
+        margin: 0 10px; /* Horizontal margin */
+    }
+    .happiness-meter .score {
+        font-size: 1.2em; /* Font size */
+        margin-top: 10px; /* Top margin */
+    }
+    .group-average {
+        font-size: 1.2em; /* Font size */
+        margin-bottom: 20px; /* Bottom margin */
+    }
+
+    /* Section margins */
+    .section-happiness,
+    .section-carousel {
+        margin-left: 20px; /* Left margin */
+    }
+
+    /* Specific styling for elements in happiness meter section */
+    #happiness-meter h1, h2, p {
+        margin-left: 80px; /* Left margin */
+    }
+    #happiness-meter h1 {
+        font-size: 40px; /* Font size */
+        font-weight: 900; /* Font weight */
+        margin-bottom: 0; /* No bottom margin */
+    }
+    #happiness-meter h2 {
+        font-size: 24px; /* Font size */
+        font-weight: 500; /* Font weight */
+        margin-top: 0; /* No top margin */
+        margin-bottom: 0; /* No bottom margin */
+    }
+    #happiness-meter p {
+        font-size: 20px; /* Font size */
+        font-weight: 100; /* Font weight */
+        margin-top: 0; /* No top margin */
+    }
+
+    /* Specific styling for elements in activities section */
+    #activities h1, h2, p {
+        margin-left: 80px; /* Left margin */
+    }
+    #activities h1 {
+        font-size: 40px; /* Font size */
+        font-weight: 900; /* Font weight */
+        margin-bottom: 0; /* No bottom margin */
+    }
+    #activities h2 {
+        font-size: 24px; /* Font size */
+        font-weight: 500; /* Font weight */
+        margin-top: 0; /* No top margin */
+        margin-bottom: 0; /* No bottom margin */
+    }
+    #activities p {
+        font-size: 20px; /* Font size */
+        font-weight: 100; /* Font weight */
+        margin-top: 0; /* No top margin */
+    }
+</style>
+
+<!-- Main HTML document -->
+<body>
+    <!-- Main content of the page -->
+    <main>
+        <!-- Banner section at the top of the page -->
+        <div class="banner">
+            <!-- Container for the banner image -->
+            <div class="imageBanner">
+                <!-- Banner image displaying students -->
+                <img class="banner" src="images/Students.png" alt="Students">
+            </div>
+            <!-- Text overlay on the banner image -->
+            <div class="textBanner">
+                <!-- Main heading and description within the banner -->
+                <h2>A NEW FORM OF</h2>
+                <h1>EXPLORING THE WORLD</h1>
+                <p>Connect with students from many countries</p>
+            </div>
+        </div>
+
+        <!-- Section for expressing emotions and tracking happiness -->
+        <section id="happiness" class="section-happiness">
+            <h2>EXPRESS YOUR EMOTIONS</h2>
+            <p>TRACK AND ANALYSE HOW YOUR TEAM FEELS</p>
+            <p>Visualize your team's happiness meter and describe their feelings with tags to aid conflict resolution. Remember to act with patience and empathy!</p>
+            <div>
+                <!-- Form for tracking happiness (commented out) -->
+                <!--
+                <form id="happinessForm">
+                    <div class="slider-container">
+                        <input type="range" min="0" max="10" value="5" class="slider" id="happinessRange">
+                        <p>Valor selecionado: <span id="valueDisplay">5</span></p>
+                    </div>
+                    <div>Média do grupo: <span id="valueDisplayGroup">5</span></div>
+                    <button id="saveButton">Salvar Valor</button>
+                </form>
+                -->
+            </div>
+
+            <!-- Container for the happiness meter -->
+            <form class="happiness-container" id="happinessForm">
+                <!-- Happiness meter display -->
+                <div class="happiness-meter" class="slider-container">
+                    <!-- Emoji representing neutral face -->
+                    <span class="emoji">&#129300;</span>
+                    <!-- Meter with a slider for input -->
+                    <div class="meter" class="slider-container">
+                        <!-- Emoji representing sad face -->
+                        <span class="emoji">&#128557;</span>
+                        <!-- Slider for selecting happiness level -->
+                        <input type="range" min="0" max="10" value="5" class="slider" id="happinessRange">
+                        <!-- Emoji representing happy face -->
+                        <span class="emoji">&#128512;</span>
+                    </div>
+            </form>
+                <!-- Display for the current happiness meter value -->
+                <div class="score">Happiness meter: <span id="valueDisplay">5</span></div>
+                <!-- Display for the group average happiness meter value -->
+                <div class="group-average">
+                    Group Average: <span id="valueDisplayGroup">5</span>
+                </div>
+                <!-- Button to save the selected happiness meter value -->
+                <button type="button" id="saveButton">Save value</button>
+        </section>
+
+        <!-- Section for displaying activities in a carousel -->
+        <section id="activities-carousel" class="section-carousel">
+            <h2>ACTIVITIES CAROUSEL</h2>
+            <p>EXPLORE YOUR UNDONE ACTIVITIES</p>
+            <p>Remember your deadlines and pending activities. Don't forget to mark tasks as 'done' once completed to track your progress</p>
+            <!-- Message display for tasks (initially empty) -->
+            <div id="messageTasks" style="color: red;"></div>
+            <!-- Carousel for displaying activities -->
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <!-- Single item in the carousel -->
+                    <div class="carousel-item">
+                        <h5>Fill the Decision-Making form 1</h5>
+                        <p>Discover your Decision-Making profile by answering a few questions!</p>
+                        <!-- Footer section within the carousel item -->
+                        <div class="item-footer">
+                            <!-- Calendar icon for the task deadline -->
+                            <img src="../images/calendar.png" pngalt="Calendar">
+                            <!-- Deadline for the task -->
+                            <span>Today - 12:00pm</span>
+                            <!-- Button to mark the task as done -->
+                            <button class="toggle-button" data-url="/questionnaireDm1">✓</button>
+                        </div>
+                    </div>
+                    <!-- New item in the carousel -->
+                    <div class="carousel-item">
+                        <h5>Fill the Decision-Making form 2</h5>
+                        <p>Discover your Decision-Making profile by answering a few questions!</p>
+                        <!-- Footer section within the carousel item -->
+                        <div class="item-footer">
+                            <!-- Calendar icon for the task deadline -->
+                            <img src="../images/calendar.png" alt="Calendar">
+                            <!-- Deadline for the task -->
+                            <span>Tomorrow - 12:00pm</span>
+                            <!-- Button to mark the task as done -->
+                            <button class="toggle-button" data-url="/questionnaireDm2">✓</button>
+                        </div>
+                    </div>
+                    <!-- New item in the carousel -->
+                    <div class="carousel-item">
+                        <h5>Fill the Decision-Making form 3</h5>
+                        <p>Discover your Decision-Making profile by answering a few questions!</p>
+                        <!-- Footer section within the carousel item -->
+                        <div class="item-footer">
+                            <!-- Calendar icon for the task deadline -->
+                            <img src="../images/calendar.png" alt="Calendar">
+                            <!-- Deadline for the task -->
+                            <span>Next week - 12:00pm</span>
+                            <!-- Button to mark the task as done -->
+                            <button class="toggle-button" data-url="/questionnaireDm3">✓</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript to add interactivity to the page -->
+    <script>
+        document.addEventListener("DOMContentLoaded", async function() {
+            // Function to check if the result already exists
+            async function checkIfResultExists() {
+                try {
+                    // Send a request to check if the result exists
+                    const response = await fetch(`/student/checkResult`);
+                    const data = await response.json();
+                    return data.exists;
+                } catch (error) {
+                    console.error("Error checking result:", error);
+                    return false;
+                }
+            }
+
+            // Check if the result exists when the page loads
+            let resultExists = await checkIfResultExists();
+
+            if (resultExists) {
+                // Hide all the carousel items if the result exists
+                const cardsToHide = document.querySelectorAll('.carousel-item');
+                cardsToHide.forEach(card => {
+                    card.style.display = 'none';
+                });
+                const messageTasks = document.getElementById('messageTasks');
+                messageTasks.textContent = "You don't have tasks";
+            }
+
+
+            // Save button element
+            const saveButton = document.getElementById("saveButton");
+            // Happiness form element
+            const happinessForm = document.getElementById("happinessForm");
+            // Display element for the current happiness value
+            const valueDisplay = document.getElementById("valueDisplay");
+            // Display element for the group average happiness value
+            const valueDisplayGroup = document.getElementById("valueDisplayGroup");
+
+            // Add click event listener to the save button
+            saveButton.addEventListener("click", async function(event) {
+                event.preventDefault();
+
+                // Get the slider element and current happiness meter value
+                const slider = document.getElementById("happinessRange");
+                const happinessMeter = parseFloat(valueDisplay.textContent);
+
+                // Create form data to send in the request
+                const formData = new FormData(happinessForm);
+                formData.append("happinessMeter", happinessMeter);
+
+                try {
+                    // Send a POST request to save the happiness meter value
+                    const response = await fetch("/happinessMeter", {
+                        method: "POST",
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Failed to save happiness meter");
+                    }
+
+                    // Parse the response data
+                    const data = await response.json();
+                    console.log("Student created:", data);
+
+                    // Update the group average display with the new data
+                    valueDisplayGroup.textContent = data.averageHappinessMeter;
+                } catch (error) {
+                    console.error("Error saving happiness meter:", error);
+                }
+            });
+
+            // Get the slider element
+            const slider = document.getElementById("happinessRange");
+
+            // Update the value display when the slider value changes
+            slider.oninput = function() {
+                valueDisplay.textContent = this.value;
+            };
+
+            // Add click event listeners to all toggle buttons
+            const toggleButtons = document.querySelectorAll('.toggle-button');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', handleButtonClick);
+            });
+            
+            // Function to handle button click event
+            function handleButtonClick(event) {
+                // Get the URL from the button's data-url attribute
+                const url = event.target.getAttribute('data-url');
+                // Redirect to the new URL
+                window.location.href = url;
+            }
+        });
+        const logoutButton = document.getElementById("logoutButton");
+            logoutButton.addEventListener("click", async function() {
+                try {
+                    const response = await fetch('/logout', {
+                        method: 'POST'
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Problem');
+                    }
+
+                    if (response.redirected) {
+                        window.location.href = response.url;
+                    } else {
+                        const data = await response.json();
+                        alert(data.message || 'Logout realizado com sucesso!');
+                    }
+                } catch (error) {
+                    console.error('Erro ao fazer logout:', error);
+                    alert('Erro ao fazer logout');
+                }
+            });
+    </script>
+</body>

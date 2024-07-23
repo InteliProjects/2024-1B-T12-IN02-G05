@@ -1,0 +1,611 @@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Seu código CSS original */
+        .register {
+            font-family: 'Poppins';
+        }
+
+        .register header, footer {
+            display: none;
+        }
+
+        /* Color Palette */
+        :root {
+            --azul-escuro: #182436; /* Dark blue */
+            --amarelo-brilhante: #FBC202; /* Bright yellow */
+            --preto: #000000; /* Black */
+            --branco: #FFFFFF; /* White */
+            justify-content: center;
+        }
+
+        /* Typography */
+        body {
+            margin: 0;
+            padding: 0;
+            color: var(--azul-escuro);
+            display: flex;
+            flex-direction: column;
+            background: whitesmoke;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #FFFFFF; /* White links */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 25px;
+            line-height: 80px;
+        }
+
+        h1 .b {
+            color: #FFFFFF; /* White text for class .b inside h1 */
+            font-size: 25px;
+            line-height: 80px;
+        }
+
+        h2 {
+            font-size: 20px;
+            line-height: 60px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        /* Header */
+        header {
+            background-color: #253C56;
+            color: var(--branco);
+            padding: 10px 20px;
+            width: 100%;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            row-gap: 60px;
+        }
+
+        header button {
+            background: none;
+            border: none;
+            color: var(--branco);
+            font-size: 24px;
+            cursor: pointer;
+            width: auto;
+            padding: 0;
+        }
+
+        header img {
+            height: 60px;
+            width: auto;
+            max-width: 100%;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .banner {
+            width: 100%;
+        }
+
+        /* Content */
+        .content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+
+        .group-select, .box {
+            background-color: #223647;
+            padding: 10px 40px 30px 40px;
+            border-radius: 27px;
+            width: 25%;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .box {
+            background-color: #253C56;
+            color: var(--branco);
+            margin: 50px;
+            width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .group-select {
+            color: #fff;
+        }
+
+        .group-select select, .form-group input, .form-group select {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #F9AB00;
+            color: var(--branco);
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #bd8202;
+        }
+
+        .bottom-form {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            background-color: var(--amarelo-brilhante);
+            color: var(--preto);
+            border: none;
+            width: 200px;
+            padding: 10px 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .button-container button:first-child {
+            margin-right: 10px;
+        }
+
+        .button-container button:last-child {
+            margin-left: 10px;
+        }
+
+        .group-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .group-average {
+            background-color: #32a852;
+            color: var(--branco);
+            padding: 20px;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        .group-average p {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .group-details {
+            background-color: #223647;
+            color: var (--branco);
+            padding: 20px;
+            border-radius: 8px;
+            width: 60%;
+        }
+
+        .group-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .group-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #fff;
+        }
+
+        .group-list img.avatar {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .group-list img.flag {
+            margin-left: auto;
+        }
+
+        .question {
+            margin: 30px 100px;
+            padding: 20px;
+            background-color: #fff; /* White */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
+        }
+
+        .question input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer div {
+            margin-top: 10px;
+        }
+
+        footer a img {
+            width: 30px;
+            height: auto;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        .footer a {
+            color: var(--branco);
+            margin: 0 10px;
+        }
+
+        .tag {
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .bt {
+            width: 30px;
+            padding: 0px 30px;
+        }
+
+        /* Center the login button */
+        #btsubmit {
+            align-self: flex-end;
+        }
+
+        /* Space additional links */
+        #additional-links {
+            justify-content: space-between;
+        }
+
+        /* Style for error message */
+        .error-message {
+            color: red;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #password-message {
+            display: none;
+            background: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        #password-message p {
+            padding: 10px 35px;
+            font-size: 14px;
+        }
+
+        .valid {
+            color: green;
+        }
+
+        .valid:before {
+            position: relative;
+            left: -35px;
+            content: "✔";
+        }
+
+        .invalid {
+            color: red;
+        }
+
+        .invalid:before {
+            position: relative;
+            left: -35px;
+            content: "✖";
+        }
+
+        .bottom-form {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+       }
+
+    </style>
+<body class="register">
+    <!-- Create a form for user registration with an ID of "registerForm" and class "box" -->
+    <form id="registerForm" class="box">
+               <!-- Display a header prompting the user if it's their first access -->
+               <h3>Is this your first access?</h3>
+               <!-- Display the main heading for the registration form -->
+               <h1>Register User</h1>
+               
+               <!-- Form group for the user's name input -->
+               <div class="form-group">
+                   <label for="name">Name:</label>
+                   <!-- Input field for the user to enter their full name, required field -->
+                   <input type="text" id="name" name="name" placeholder="Enter your full name..." required>
+               </div>
+       
+               <!-- Form group for the user's username input -->
+               <div class="form-group">
+                   <label for="username">Username:</label>
+                   <!-- Input field for the user to enter a username, required field -->
+                   <input type="text" id="username" name="username" placeholder="Enter a username..." required>
+               </div>
+       
+               <!-- Form group for the user's email input -->
+               <div class="form-group">
+                   <label for="email">Email:</label>
+                   <!-- Input field for the user to enter their email, required field -->
+                   <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+               </div>
+       
+               <!-- Form group for the user's password input -->
+               <div class="form-group">
+                   <label for="password">Password:</label>
+                   <!-- Input field for the user to enter their password, required field -->
+                   <input type="password" id="password" name="password" placeholder="Enter your password..." required>
+               </div>
+       
+               <!-- Password validation message -->
+               <div id="password-message">
+                   <h4>Password must contain the following:</h4>
+                   <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                   <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                   <p id="number" class="invalid">A <b>number</b></p>
+                   <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+               </div>
+       
+               <!-- Form group for confirming the user's password -->
+               <div class="form-group">
+                   <label for="passwordConfirm">Confirm Password:</label>
+                   <!-- Input field for the user to re-enter their password for confirmation, required field -->
+                   <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Enter your password again..." required>
+               </div>
+       
+               <!-- Form group for selecting the user's country -->
+               <div class="form-group">
+                   <label for="country">Select Country:</label>
+                   <!-- Dropdown menu for the user to select their country -->
+                   <select id="country" name="nationality">
+                       <option value="brazil">Brazil</option>
+                       <option value="senegal">Senegal</option>
+                       <option value="england">England</option>
+                       <option value="china">China</option>
+                       <option value="peru">Peru</option>
+                       <option value="germany">Germany</option>
+                       <option value="netherlands">Netherlands</option>
+                   </select>
+               </div>
+       
+               <!-- Form group for the user's city input -->
+               <div class="form-group">
+                   <label for="city">City:</label>
+                   <!-- Input field for the user to enter their city, required field -->
+                   <input type="text" id="city" name="city" placeholder="Enter your city..." required>
+               </div>
+       
+               <!-- Form group for the user's age input -->
+               <div class="form-group">
+                   <label for="age">Age:</label>
+                   <!-- Input field for the user to enter their age, required field -->
+                   <input type="number" id="age" name="age" placeholder="Enter your age..." required>
+               </div>
+       
+               <!-- Form group for selecting the user's gender -->
+               <div class="form-group">
+                   <label for="gender">Gender:</label>
+                   <!-- Dropdown menu for the user to select their gender, required field -->
+                   <select id="gender" name="gender" required>
+                       <option value="">Select your gender</option>
+                       <option value="male">Male</option>
+                       <option value="female">Female</option>
+                       <option value="other">Other</option>
+                   </select>
+               </div>
+       
+               <!-- Form group for the user's phone input -->
+               <div class="form-group">
+                   <label for="phone">Phone Number:</label>
+                   <!-- Input field for the user to enter their phone number, required field -->
+                   <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number..." required>
+               </div>
+       
+               <!-- Form group for selecting the user type -->
+               <div class="form-group">
+                   <label for="userType">User type:</label>
+                   <!-- Dropdown menu for the user to select their user type, required field -->
+                   <select id="userType" name="userType" required>
+                       <option value="">Select...</option>
+                       <option value="student">Student</option>
+                   </select>
+               </div>
+       
+               <div class="form-group">
+                   <label for="colorGroup">Color group:</label>
+                   <!-- Dropdown menu for the user to select their user type, required field -->
+                   <select id="colorGroup" name="colorGroup" required>
+                       <option value="">Select...</option>
+                       <option value="red">Red</option>
+                       <option value="blue">Blue</option>
+                       <option value="green">Green</option>
+                       <option value="purple">Purple</option>
+                       <option value="orange">Orange</option>
+                       <option value="black">Black</option>
+                       <option value="white">White</option>
+                   </select>
+               </div>
+       
+               <!-- Form group containing the submit button -->
+               <div class="bottom-form">
+                   <!-- Button to submit the registration form -->
+                   <button id="btsubmit">Register</button>
+                   <a href="/">I have an account</a>
+               </div>
+
+               <div class="bottom-form">
+                <a href="/">Already registered</a>
+            </div>
+           </form>
+           
+           <!-- Container for displaying error messages -->
+           <div id="errorMessages"></div>
+       
+           <!-- JavaScript for handling form submission and password validation -->
+           <script>
+             // Password validation
+             var passwordInput = document.getElementById('password');
+             var confirmPasswordInput = document.getElementById('passwordConfirm');
+             var messageBox = document.getElementById('password-message');
+             var letter = document.getElementById('letter');
+             var capital = document.getElementById('capital');
+             var number = document.getElementById('number');
+             var length = document.getElementById('length');
+       
+             passwordInput.onfocus = function() {
+                 messageBox.style.display = 'block';
+             }
+       
+             passwordInput.onblur = function() {
+                 messageBox.style.display = 'none';
+             }
+       
+             passwordInput.onkeyup = function() {
+                 // Validate lowercase letters
+                 var lowerCaseLetters = /[a-z]/g;
+                 if(passwordInput.value.match(lowerCaseLetters)) {
+                     letter.classList.remove('invalid');
+                     letter.classList.add('valid');
+                 } else {
+                     letter.classList.remove('valid');
+                     letter.classList.add('invalid');
+                 }
+                 
+                 // Validate capital letters
+                 var upperCaseLetters = /[A-Z]/g;
+                 if(passwordInput.value.match(upperCaseLetters)) {
+                     capital.classList.remove('invalid');
+                     capital.classList.add('valid');
+                 } else {
+                     capital.classList.remove('valid');
+                     capital.classList.add('invalid');
+                 }
+       
+                 // Validate numbers
+                 var numbers = /[0-9]/g;
+                 if(passwordInput.value.match(numbers)) {
+                     number.classList.remove('invalid');
+                     number.classList.add('valid');
+                 } else {
+                     number.classList.remove('valid');
+                     number.classList.add('invalid');
+                 }
+                 
+                 // Validate length
+                 if(passwordInput.value.length >= 8) {
+                     length.classList.remove('invalid');
+                     length.classList.add('valid');
+                 } else {
+                     length.classList.remove('valid');
+                     length.classList.add('invalid');
+                 }
+             }
+       
+             document.getElementById('registerForm').addEventListener('submit', async function (event) {
+               event.preventDefault(); // Prevent the default form submission behavior
+               
+               // Check if passwords match
+               if (passwordInput.value !== confirmPasswordInput.value) {
+                 const errorMessages = document.getElementById('errorMessages');
+                 errorMessages.innerHTML = ''; // Clear previous error messages
+                 const errorMessage = document.createElement('p');
+                 errorMessage.textContent = 'Passwords do not match!';
+                 errorMessages.appendChild(errorMessage);
+                 return;
+               }
+       
+               // Create a FormData object from the form
+               const formData = new FormData(this);
+               
+               // Send a POST request to the server with the form data
+               const response = await fetch('/register-user', {
+                 method: 'POST',
+                 body: formData
+               });
+           
+               // Parse the JSON response from the server
+               const responseData = await response.json();
+       
+               if (response.ok) {
+                 // If the response is successful, redirect to the login page
+                 window.location.href = '/login';
+               } else {
+                 // If there are errors, display them in the errorMessages div
+                 const errorMessages = document.getElementById('errorMessages');
+                 errorMessages.innerHTML = ''; // Clear previous error messages
+                 const errorMessage = document.createElement('p');
+                 errorMessage.textContent = responseData.message;
+                 errorMessages.appendChild(errorMessage);
+               }
+             });
+           </script>
+       </body>
+
+       

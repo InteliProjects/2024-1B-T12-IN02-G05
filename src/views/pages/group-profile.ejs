@@ -1,0 +1,424 @@
+  <style>
+     /* General settings for html and body */
+  html, body {
+  height: 100%;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  display: flex;
+  }
+
+  /* Styling for the main section */
+  #main {
+    flex: 1; /* Occupies available space */
+    display: flex;
+    flex-direction: column; /* organizes the div elements into columns */
+    justify-content: flex-start; /* Aligns items to the beginning of the container */
+    align-items: center; 
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins';
+  }
+
+  /* General settings for body */
+  body {
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    width: 100%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;  
+    overflow-x: hidden; /* Hides horizontal overflow */
+    background-color: #FFFAFA;
+    font-family: 'Poppins', sans-serif;
+  }
+
+    .edit-mode {
+      display: none;
+    }
+
+    .edit-mode input,
+    .edit-mode textarea {
+      display: none;
+      width: 220px;
+      margin: 5px 0;
+      border: none;
+      font-family: inherit;
+      font-size: 10px;
+      display: block;
+      background-color: transparent;
+      color: white;
+    }
+
+    textarea {
+      padding: 0;
+      height: 110px;
+      width: 230px;
+      max-width: 230px; 
+      max-height: 100px;
+    }
+
+    .column span {
+      width: 230px;
+      font-size: 10px;
+      max-width: 210px; 
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5%;
+    }
+
+    button {
+      border: none;
+      border-radius: 10.4px;
+      cursor: pointer;
+      font-size: 15px;
+      color: white;
+      font-weight: bold;
+      gap: 10.36px;
+      display: flex;
+      align-items: center;
+    }
+
+    #edit {
+      background-color: #253C56;
+      margin-right: 100px;
+    }
+
+    .cancel-button {
+      background-color: #f44336;
+    }
+
+    .save-button {
+      background-color: #008CBA;
+    }
+
+    #space {
+      margin-top: 10px;
+    }
+
+    .edit-img-button {
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 0;
+    }
+
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .inferior {
+      display: flex;
+      justify-content: space-between;
+      gap: 2%;
+      width: 100%;
+      margin-top: 2%;
+    }
+
+    .superior {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      margin-bottom: 1.2%;
+      width: 100%;
+    }
+
+    .superior h1 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    #pagetitle {
+      font-weight: bold;
+      font-size: 36px;
+      text-align: left;
+      margin: 0;
+      color: #253C56;
+    }
+
+    .profile {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .principaltitle {
+      font-weight: bold;
+      background-color: #253C56;
+      width: 180px;
+      height: 18px;
+      border-radius: 10.4px;
+      display: flex;
+      align-items: center;
+      color: white;
+      font-size: 12.3px;
+      padding: 2%;
+    }
+
+    #socialmedia {
+      background-color: #F9AB00; 
+      color: black;
+    }
+
+    #master {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    .section {
+      background-color: #305073;
+      border-radius: 10.4px;
+      color: white;
+      height: 110px;
+      width: 260px;
+      margin-top: 24px;
+      padding-left: 20px;
+      padding-top: 13px;
+    }
+
+    .social-media {
+      background-color: #F3C666;
+      color: black;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10.4px;
+      padding-left: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-top: 24px;
+      width: 234px;
+      height: 30px;
+    }
+
+    .social-media input,
+    .social-media span {
+      width: 180px;
+      background-color: transparent;
+      justify-content: center;
+      font-size: 14.391px;
+      color: black;
+    }
+
+    .info input, 
+    .info span {
+      color: black;
+    }
+
+    hr {
+      width: 100%;
+      border: 1.8px solid #F9AB00;
+    }
+
+    #edit_image {
+      width: 28px;
+      height: 28px;
+    }
+
+    #profile-img {
+      width: 110px;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    #profile-view {
+      margin-left: 30px;
+      align-items: center;
+    }
+
+    .profile-info {
+      margin-left: 30px;
+    }
+
+    .profile-info h1 {
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+    .profile-info p {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+
+    .icon-img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .icon-button {
+      width: 17.5px;
+      height: 22.9px;
+    }
+
+    .icon-about {
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+    }
+
+    .section h3 {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="master">
+    <div class="superior">
+      <div id="image">
+        <img src="../images/icone_perfil.svg" id="profile-img"> 
+      </div>
+      <div id="profile-img-edit">
+        <div id="space"></div>
+      </div>
+      <div class="profile-info" id="profile-view">
+        <h1 id="profile-name">Loading...</h1>
+        <p id="profile-alias">Loading...</p>
+      </div>
+    </div>
+    <hr>
+    <div class="inferior">
+      <div class="column">
+        <div class="principaltitle">
+          <img src="../images/info.svg" class="icon-img">
+          <h3 id="section">My Informations</h3>
+        </div>
+        <div class="section" id="languages-section">
+          <h3>Languages</h3>
+          <div class="items" id="languages-view">
+            <span id="language-list">Loading...</span>
+          </div>
+          <div class="edit-mode" id="languages-edit">
+            <input type="text" id="edit-languages" value="Loading...">
+          </div>
+        </div>
+        <div class="section" id="interests-section">
+          <h3>Interests</h3>
+          <div class="items" id="interests-view">
+            <span id="interest-list">Loading...</span>
+          </div>
+          <div class="edit-mode" id="interests-edit">
+            <input type="text" id="edit-interests" value="Loading...">
+          </div>
+        </div>
+      </div>
+      <div class="column" id="social-medias-section">
+        <div class="principaltitle" id="socialmedia">
+          <img src="../images/cam.svg" class="icon-img">
+          <h3>My social medias</h3>
+        </div>
+        <div class="items" id="social-medias-view">
+          <div class="social-media">
+            <img src="../images/insta.svg" class="icon-img">
+            <span class="section-social" id="social-media-1">Loading...</span>
+          </div>
+          <div class="social-media">
+            <img src="../images/link.svg" class="icon-img">
+            <span class="section-social" id="social-media-2">Loading...</span>
+          </div>
+          <div class="social-media">
+            <img src="../images/face.svg" class="icon-img">
+            <span class="section-social" id="social-media-3">Loading...</span>
+          </div>
+          <div class="social-media">
+            <img src="../images/x.svg" class="icon-img">
+            <span class="section-social" id="social-media-4">Loading...</span>
+          </div>
+        </div>
+        <div class="edit-mode" id="social-medias-edit">
+          <div class="social-media">
+            <img src="../images/insta.svg" class="icon-img">
+            <input type="text" class="section-social" id="edit-social-media-1" value="Loading...">
+          </div>
+          <div class="social-media">
+            <img src="../images/link.svg" class="icon-img">
+            <input type="text" class="section-social" id="edit-social-media-2" value="Loading...">
+          </div>
+          <div class="social-media">
+            <img src="../images/face.svg" class="icon-img">
+            <input type="text" class="section-social" id="edit-social-media-3" value="Loading...">
+          </div>
+          <div class="social-media">
+            <img src="../images/x.svg" class="icon-img">
+            <input type="text" class="section-social" id="edit-social-media-4" value="Loading...">
+          </div>
+        </div>
+      </div>
+      <div class="column" id="more-about-me-section">
+        <div class="principaltitle">
+          <img src="../images/about.svg" class="icon-about">
+          <h3>More about me</h3>
+        </div>
+        <div id="more-about-me-view">
+          <div class="section">
+            <h3>My hobbies</h3>
+            <span id="hobbies">Loading...</span>
+          </div>
+          <div class="section">
+            <h3>My bio</h3>
+            <span id="bio">Loading...</span>
+          </div>
+        </div>
+        <div class="edit-mode" id="more-about-me-edit">
+          <div class="section">
+            <h3>My hobbies</h3>
+            <textarea id="edit-hobbies">Loading...</textarea>
+          </div>
+          <div class="section">
+            <h3>My bio</h3>
+            <textarea id="edit-bio">Loading...</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    async function loadUserProfile() {
+      try {
+        const userId = window.location.pathname.split('/').pop(); // Obtém o ID da URL
+        const response = await fetch(`/user/${userId}`); // Faz a requisição GET para o backend
+        const userData = await response.json(); // Converte a resposta para JSON
+
+        document.getElementById('profile-name').textContent = userData.user.name;
+        document.getElementById('profile-alias').textContent = userData.student.alias;
+        document.getElementById('language-list').textContent = userData.student.languages;
+        document.getElementById('interest-list').textContent = userData.student.interests;
+        document.getElementById('social-media-1').textContent = userData.student.instagram;
+        document.getElementById('social-media-2').textContent = userData.student.linkedin;
+        document.getElementById('social-media-3').textContent = userData.student.facebook;
+        document.getElementById('social-media-4').textContent = userData.student.x;
+        document.getElementById('hobbies').textContent = userData.student.hobbies;
+        document.getElementById('bio').textContent = userData.student.bio;
+        const profileImage = document.getElementById('profile-img');
+        if (userData.student.profile_photo) {
+          profileImage.src = userData.student.profile_photo;
+        } else {
+          profileImage.src = '../images/icone_perfil.svg'; // Caminho da imagem padrão
+        }
+
+      } catch (error) {
+        console.error('Erro ao carregar perfil:', error);
+      }
+    }
+
+    window.onload = loadUserProfile;
+  </script>
+</body>
